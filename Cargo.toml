@@ -56,6 +56,9 @@ default-client = []
 middleware-logger = []
 # requires web-sys for TextDecoder on wasm
 encoding = ["encoding_rs", "web-sys"]
+# curl-impersonate support
+impersonate-chrome = ["http-client/impersonate-chrome"]
+impersonate-ff = ["http-client/impersonate-ff"]
 
 [dependencies]
 futures-util = { version = "0.3.5", features = ["io"] }
@@ -63,7 +66,7 @@ log = { version = "0.4.7", features = ["kv_unstable"] }
 mime_guess = "2.0.3"
 serde = "1.0.97"
 serde_json = "1.0.40"
-http-client = { version = "6.5.0", default-features = false }
+http-client = { git = "https://github.com/selfisekai/http-client.git", branch = "impersonate-tests", default-features = false }
 http-types = "2.5.0"
 async-std = { version = "1.6.0", default-features = false, features = ["std"] }
 async-trait = "0.1.36"
